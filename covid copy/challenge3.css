@@ -1,0 +1,205 @@
+body {
+  margin: 0px;
+  background: #1e242a;
+}
+
+#box3 {
+  overflow: hidden;
+}
+#container {
+  width: 100%;
+  position: absolute;
+  top: -100%;
+  animation: anim4 1.5s forwards 0s;
+}
+#logo {
+  float: left;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+#logo img {
+  width: 225px;
+}
+
+#table {
+  width: 100%;
+}
+#menu {
+  font-family: "Bahnschrift Condensed";
+  font-size: 15px;
+  color: white;
+  letter-spacing: 2px;
+  margin-right: 20px;
+  margin-top: 30px;
+  float: right;
+}
+#menu ul {
+  list-style: none;
+}
+#menu ul li {
+  display: inline-block;
+  margin-left: 75px;
+}
+#menu ul li:hover {
+  color: rgb(50, 194, 81);
+}
+@keyframes anim4 {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0%;
+  }
+}
+/* a,
+a:focus,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+a {
+  all: unset;
+  color: inherit;
+}
+
+a:hover {
+  color: rgb(50, 194, 81);
+} */
+
+.topLink,
+.topLink:focus,
+.topLink:active,
+.topLink:visited {
+  text-decoration: none;
+  color: white;
+}
+.topLink:hover {
+  color: green;
+}
+
+#box4 {
+  width: 75%;
+  height: auto;
+  font-family: "Bahnschrift Condensed";
+  font-size: 25px;
+  color: white;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 15%;
+  left: 12.5%;
+  text-align: center;
+}
+#ireland {
+  width: 15%;
+  height: 20%;
+  font-family: "Bahnschrift Condensed";
+  font-size: 25px;
+  color: white;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 60%;
+  left: 2.5%;
+  text-align: center;
+  border-radius: 25px;
+  border: 5px solid white;
+  padding: 0px 0px 30px 0px;
+}
+#ireland:hover {
+  background-color: white;
+  color: #1e242a;
+  border: 5px solid green;
+  top: 55%;
+}
+#irelandFlag {
+  width: 40%;
+  height: 40%;
+}
+
+#ireland2 {
+  width: 15%;
+  height: 20%;
+  font-family: "Bahnschrift Condensed";
+  font-size: 25px;
+  color: white;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 60%;
+  left: 22.5%;
+  text-align: center;
+  border-radius: 25px;
+  border: 5px solid white;
+  padding: 0px 0px 30px 0px;
+}
+#ireland2:hover {
+  background-color: white;
+  color: #1e242a;
+  border: 5px solid green;
+  top: 55%;
+}
+
+#ireland3 {
+  width: 15%;
+  height: 20%;
+  font-family: "Bahnschrift Condensed";
+  font-size: 20px;
+  color: white;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 60%;
+  left: 42.5%;
+  text-align: center;
+  border-radius: 25px;
+  border: 5px solid white;
+  padding: 0px 0px 30px 0px;
+}
+#ireland3:hover {
+  background-color: white;
+  color: #1e242a;
+  border: 5px solid green;
+  top: 55%;
+}
+
+#ireland4 {
+  width: 15%;
+  height: 20%;
+  font-family: "Bahnschrift Condensed";
+  font-size: 25px;
+  color: white;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 60%;
+  left: 62.5%;
+  text-align: center;
+  border-radius: 25px;
+  border: 5px solid white;
+  padding: 0px 0px 30px 0px;
+}
+#ireland4:hover {
+  background-color: white;
+  color: #1e242a;
+  border: 5px solid green;
+  top: 55%;
+}
+
+#ireland5 {
+  width: 15%;
+  height: 20%;
+  font-family: "Bahnschrift Condensed";
+  font-size: 25px;
+  color: white;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 60%;
+  left: 82.5%;
+  text-align: center;
+  border-radius: 25px;
+  border: 5px solid white;
+  padding: 0px 0px 30px 0px;
+}
+#ireland5:hover {
+  background-color: white;
+  color: #1e242a;
+  border: 5px solid green;
+  top: 55%;
+}

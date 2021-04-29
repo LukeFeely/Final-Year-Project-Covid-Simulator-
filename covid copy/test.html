@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="p5.js"></script>
+    <script src="p5.dom.js"></script>
+
+    <script src="p5.sound.min.js"></script>
+    <!-- <script src="Person.js"></script> -->
+    <script src="Coordinate.js"></script>
+    <script src="Community2.js"></script>
+    <script src="Person3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+
+    
+    <link rel="stylesheet" type="text/css" href="test.css" />
+    <meta charset="utf-8" />
+  </head>
+  <body>
+
+    <div id="box3">
+      <div id="container">
+        <a href="https://covid-simulator-tcd.herokuapp.com"><div id="logo">
+          <img src="pictures/potentialLogo4.png" />
+        </div></a>
+        
+        <div id="menu" >
+          
+          <ul>
+            <a href="https://covid-simulator-tcd.herokuapp.com"><li >
+              Introduction
+            </li></a>
+            <a href="https://covid-simulator-tcd.herokuapp.com/challenge1.html"><li >
+              Challenge 1
+            </li></a>
+            <a href="https://covid-simulator-tcd.herokuapp.com/challenge2.html"><li>
+              Challenge 2
+            </li></a>
+            <a href="https://covid-simulator-tcd.herokuapp.com/challenge3.html"><li>
+              Challenge 3
+            </li></a>
+            <a href="https://covid-simulator-tcd.herokuapp.com/sandbox.html"><li>
+              SandBox
+            </li></a>
+          </ul>
+        </div>
+      </div>
+    </div>
+<div id="contentDiv">
+    <div id="box4"><h1><b><u>Challenge 3 - Israel</u></b></h1>
+        <img id="irelandFlag" src="pictures/israelFlag.png">
+    </br> <p>The country you have been assigned is Israel. This will be very similar to the last simulator with some small but very important differences which will impact how the disease spreads.</p>
+  </br>
+  <hr>
+  </br>
+  
+</br>
+
+<p>The first main difference is that people travelling from abroad will now be taken into account.</p>
+
+<img id="worldPic" src="pictures/world.png">
+<p>People will travel into your communities from the outside world or go the opposite direction, depending on how high the External Travel Restrictions are set. These will be seperate to the internal restrictions which you used earlier which will dictate how often people move between communities.</p>
+
+
+
+
+
+
+
+</br>
+<hr>
+</br>
+
+<h2><b><u>Israel's Key Differences:</u></b></h2>
+<div class="parent">
+  <ul >
+    <li><b><u>Vaccination Program</u> - </b>Israel's has the highest vaccination rate in the world, so you will be able to vaccinate more people per day than in the previous simulation.</li></br>
+    <li><b><u>Initial Cases</u> - </b>Despite its high vaccination rate, Israel has suffered from high case numbers. So, the simulation will begin with 2 asymptomatic people in each community as opposed to one.</li></br>
+    <li><b><u>External Borders</u> - </b>Israel has had varied success at implementing restrictions for preventing people entering from abroad, so the External Travel Restrictions will be fixed at a moderate 50%.</li></br>
+    <li><b><u>Hospital Capacity</u> - </b>Israel has struggled to deal with the strain on the hospitals during this pandemic, so your max hospital capacity will be 15 as opposed to 20 in the previous challenge.</li></br>
+    <li><b><u>Large Budget</u> - </b>Israel has borrowed significantly and spent a lot to attempt to deal with this pandemic so you will be allocated a larger budget of €150,000,000.</li>
+  </div> 
+
+</br>
+<hr>
+</br>
+
+  <h2><b><u>Your Challenge:</u></b></h2>
+
+  <p>Your challenge will be to keep the death percentage as low as possible using the allocated €150,000,000 budget. Similar to the last simulation, once you exceed this budget, the variables will return to their initial value and you will have no control. Feel free to have several attempts with different strategies and note how they differed. When you have your paremeters set, click start to begin. The simulation will run until there are no more active infections, or until 100 days have passed.</p>
+
+</br>
+</br>
+
+
+
+
+
+</div>
+
+<div id="simulator-container">
+  <div id="sketch-container">
+        
+  </div>
+  
+  
+  <div id="controls">
+    <div id="info">
+    <h2><b><u>Info</u></b></h2>  
+    <h3 id="healthy"></h3>
+  
+    <h3 id="asymptomatic"></h3>
+    <h3 id="virus"></h3>
+    <h3 id="immune"></h3>
+  
+    <h3 id="hospitalised"></h3>
+  
+    <h3 id="dead"></h3>
+  </div>
+  
+    <!-- <h3 id="total"></h3> -->
+  </br>
+  </br>
+    <!-- <p id="timer">___________</p> -->
+  <div id="diseaseControls">
+    <h2><b><u>Disease Variables</u></b></h2> 
+    <!-- <h3 id="radio"> <span id="radioText"></span></h3> -->
+    <h3 id="probability">Probability of Infection: <span id="probabilityText"></span></h3>
+    <h3 id="hospitality">Hospitalisation Rate: <span id="hospitalisationText"></span></h3>
+    <h3 id="fatality">Fatality Rate: <span id="fatalityText"></span></h3>
+    <h3 id="period">Asymptomatic Period: <span id="asymptomaticText"></span></h3>
+  </div>  
+  </br>
+  </br>
+  <div id="govControls">
+    <h2><b><u>Government Variables</u></b></h2> 
+    
+  
+  
+    <h3 id="externalTravel"><span id="externalTravelText">External Restrictions:</span>  </h3>
+    <h3 id="travel"><span id="travelText">Internal Travel Restrictions:</span>  </h3>
+    
+    
+    <h3 id="capacity"><span id="capacityText">Hospital Capacity:</span></h3>
+  
+    
+    <h3 id="vaccine">Vaccinations per Day: <span id="vaccineText"></span></h3>
+    <h3 id="compliance">Compliance: <span id="complianceText"></span></h3>
+    <h3 id="dailyCost">Daily Cost: €0</h3>
+    <h3 id="accumulatedCost">Accumulated Cost: €0</h3>
+  
+    
+  
+    <!-- <a href="screen3.html"> Previous Page</a>
+    <a href="screen4.html"> Next Page</a> -->
+  
+  
+  
+    <!-- <a class="nav__link nav__link--btn btn--show-modal" href="#"
+      >Display Results</a
+    > -->
+    </div>
+  </div>
+  
+  
+  
+  <div
+  class="chart-container"
+  style="position: absolute; height: 13vw; width: 70vw; left: 2%"
+  
+  
+  >
+  <canvas id="myChart" ></canvas>
+  </div>
+  
+  </div>
+</div>
+
+
+
+
+    
+
+    <div class="overlay hidden"></div>
+
+    <div class="modal hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">
+        Simulation
+        <span class="highlight" id="success"></span>
+        <span class="highlightRed" id="failed"></span>
+
+      </h2>
+      <!-- <form class="modal__form"> -->
+        <p id="congrats"></p>
+      
+                
+        <h3 id="percentage"> </h3>
+        <h3 id="totalSpent"></h3>
+        <h3>Average Effective R Number: <span id="rNumber"></span></h3>
+      
+      <p id="rerun">Feel free to run the simulation again, experimenting with different variable values and taking note of the effects. Try to get the death percentage as low as you can. If you want to put your strategy to the test against different disease variables, head to the sandbox area of the site, where you have full freedom to experiment with all the controllable variables.</p>
+      
+    
+
+    <div
+    class="chart-container2"
+    style="position: relative; height: 15vw; width: 30vw; left:15%; bottom: 10%;"
+  >
+    <canvas id="myChart2"></canvas>
+
+    
+  </div>
+
+  <div class="buttonHolder" >
+    <button class="btn" id="reset">Run Again &#10227;</button>  
+    <!-- <a style="text-align: center;"href="http://127.0.0.1:8080/screen3.html" target="_parent"><button class="btn">Next Page &rarr;</button></a> -->
+    <a href="https://covid-simulator-tcd.herokuapp.com/sandbox.html"><button class="btn" >Sand Box &rarr;</button></a>
+
+    
+    </div>
+
+    
+      
+
+      <!-- </form> -->
+    </div>
+    <script src="test.js"></script>
+
+    <script src="chart.js"></script>
+
+
+  </body>
+</html>

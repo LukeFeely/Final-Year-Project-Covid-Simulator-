@@ -1,0 +1,172 @@
+<html>
+  <head>
+
+    <!-- <script src="landing.js"></script> -->
+    <!-- <script src="landing.css"></script> -->
+    <script src="Person2.js"></script>
+    <script src ="Coordinate.js"></script>
+    <script src="Community2.js"></script>
+    
+    <script defer src="challenge1.js"></script>
+    <script src="p5.js"></script>
+    <script src="p5.dom.js"></script>
+
+    <script src="p5.sound.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    <link rel="stylesheet" type="text/css" href="challenge1.css" />
+
+  </head>
+  <body>
+    
+
+    <div id="box3">
+      <div id="container">
+        <a href="https://covid-simulator-tcd.herokuapp.com"><div id="logo">
+          <img src="pictures/potentialLogo4.png" />
+        </div></a>
+        
+        <div id="menu" >
+          
+          <ul>
+            <a class="topLink" href="https://covid-simulator-tcd.herokuapp.com"><li >
+              Introduction
+            </li></a>
+            <a class="topLink" href="https://covid-simulator-tcd.herokuapp.com/challenge1.html"><li >
+              Challenge 1
+            </li></a>
+            <a class="topLink" href="https://covid-simulator-tcd.herokuapp.com/challenge2.html"><li>
+              Challenge 2
+            </li></a>
+            <a class="topLink" href="https://covid-simulator-tcd.herokuapp.com/challenge3.html"><li>
+              Challenge 3
+            </li></a>
+            <a class="topLink" href="https://covid-simulator-tcd.herokuapp.com/sandbox.html"><li>
+              SandBox
+            </li></a>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div id="box4"><h2><b><u>Challenge 1</u></b></h2>
+    </br> <p>To understand how viral diseases such as Covid-19 spread it can be useful to first look at things from the perspective of the virus. 
+      With this in mind, your first challenge will be to configure the virus in such a way that it kills off over 50% of the population with just 1 initial patient. The Simulator will be at the end of this page and will look like this image: </p>
+  </br>
+  <img id="layout" src="pictures/layout.png">
+
+</br>
+<p>There will be 150 healthy people moving within the zone on the left. When you click on one, that person will become asymptomatic and turn yellow. The person will remain asymptomatic and moving as normal for a certain period, before developing symptoms and becoming knowingly infected. At this point the person will be removed from the population and move to the quarantine zone in the top right. They will remain there for the duration of their sickness, after which they will either re-enter the population as a healthy person, or they will move to the mortuary on the bottom right.  </p>
+
+</br>
+<hr>
+</br>
+</br>
+<p>You will be able to change four aspects of the disease in your attempt to make it as deadly a virus as possible. These are:
+
+</p>
+<div class="parent">
+<ul >
+  <li><b><u>Probability of Infection</u> - </b>When an infected person comes into contact with a healthy person, how likely are they to transmit the virus. Essentially how contagious the virus is.</li></br>
+  <li><b><u>Fatality Rate</u> - </b>How likely the virus is to kill its host at some point in the duration of the infection.</li></br>
+  <li><b><u>Recovery Period</u> - </b>How long it takes for people to recover from the virus and re-enter the population.</li></br>
+  <li><b><u>Asymptomatic Period</u> - </b>How long after first being infected does it take for symptoms to develop and the person to become aware that they are infected and begin their quarantine.</li>
+</div> 
+
+</br>
+</br>
+<hr>
+</br>
+<!-- <p>Your first instinct may well be to crank everything up to the maximum value and see what happens, and we would encourage you to do so, as the results may be interesting, or you might get lucky and it will work perfectly. However, for a more consistent, measured chance of success some consideration must be taken first. If a virus is so deadly that it kills its hosts before they have had a chance to transmit the virus to someone else, its existence will be short-lived. This is a common phenomenon seen throughout nature, as viruses essentially seal their own fate by being considerably more lethal than they are contagious.</p> -->
+<!-- </br>
+<hr>
+</br>
+<p>A phrase you may have heard a lot over the last few months, <b>The R Number</b>, is an essential part of analysing how contagious viral diseases are. Also known as the Reproductive Rate, it essentially tells you, the average number of people who will contract a disease from one person with that disease. There is an important distiction to be made between the Basic Reproduction Number (R<sub>0</sub>) and the Effective Reproductive Number (R).</p>
+</br>
+<p>The Basic Reproduction Number R<sub>0</sub> is more of a theoretical figure which states the potential transmissibility of a virus if no one has been vaccinated, no one has had the disease before, and there's no way to control the spread of the virus. In reality, most of the time those 3 conditions aren't the case which leads us to the Effective Reproductive Number (The one talked about on the news). The effective reproductive number (R) is the average number of secondary cases per infectious case in a population made up of both susceptible and non-susceptible hosts. </p>
+</br>
+<hr>
+</br>
+<p>Say a disease has a theoretical R<sub>0</sub> number of 2, and an infective period of one day. This would mean that every day, each person that has it would give it to two other people. Under these conditions the entire population of Ireland would be infected within just 22 days. SARS-CoV-2, the coronavirus that has caused the Covid-19 pandemic, has an estimated R0 of around 2.63, says the University of Oxford's COVID-19 Evidence Service Team. So how come, we are well past day 22 of this pandemic.</p>
+
+</br>
+
+<p>Well firstly, because the infectious period of Covid is longer than one day so the cases would not compound that quickly, but also because exponential growth as powerful as that can only be sustained for short periods of time before a virus runs out of new hosts to infect. This graphic shows how the probability of a virus infecting 4 people depends on how many of those 4 people are already infected. </p> -->
+
+<!-- <img id="susceptibles" src="pictures/susceptibles.png"> -->
+
+<!-- </br>
+</br> -->
+<h3><b><u>Your Challenge:</u></b></h3>
+</br>
+<p>Your challenge is to configure the virus so that it kills over <b><u>50%</u></b> of the population with just one starting patient. Experiment with different values and feel free to try various different things, but try to predict the effects the changes you make might have before you run the simulation again. Set your values using the sliders on the right and click on a person to infect them and create patient zero!! The simulator will run until the disease has died out, at which point the results will be displayed. These simulations are built on probability and the movements of the people is random. This means that the exact same disease could die out instantly the first time, but spread like wild-fire the second time, so don't be afraid to try the same thing more than once. </p>
+
+</div>
+
+<div id="sketch-container"></div>
+<div id="controls">
+  <h3 id="healthy"></h3>
+
+      <h3 id="asymptomatic"></h3>
+      <h3 id="virus"></h3>
+      <h3 id="dead"></h3>      
+
+
+  <h2>Controls:</h2>
+  <h3 id="probability">Probability of Infection: <span id="probabilityText"></span></h3>
+  <h3 id="fatality">Fatality Rate: <span id="fatalityText"></span></h3>
+  <h3 id="recovery">Recovery Period: <span id="recoveryText"></span></h3>
+  <h3 id="period">Asymptomatic Period: <span id="asymptomaticText"></span></h3>
+
+</br>
+<!-- <a class="nav__link nav__link--btn btn--show-modal" href="#"
+        >Display Results</a
+      > -->
+
+
+</div>
+
+<div class="overlay hidden"></div>
+
+    <div class="modal hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">
+        Challenge
+        <span class="highlight" id="success"></span>
+        <span class="highlightRed" id="failed"></span>
+
+      </h2>
+      <!-- <form class="modal__form"> -->
+        <p id="congrats"></p>
+      </br>
+                
+        <h3 id="percentage"> </h3>
+        <h3>Average Effective R Number: <span id="rNumber"></span></h3>
+        
+      </br>
+      <p id="rerun"> Feel free to run the simulation again, experimenting with different variable values and taking note of the effects. When you are ready you can continue on to the next section which will add more complexity to the simulation!</p>
+    </br>
+
+  
+
+        <div class="buttonHolder" >
+        <button class="btn" id="reset">Run Again &#10227;</button>  
+        <!-- <a style="text-align: center;"href="http://127.0.0.1:8080/screen3.html" target="_parent"><button class="btn">Next Page &rarr;</button></a> -->
+        <a href="https://covid-simulator-tcd.herokuapp.com/challenge2.html"><button class="btn" >Challenge 2 &rarr;</button></a>
+
+        
+        </div>
+
+    
+      
+
+      <!-- </form> -->
+    </div>
+
+
+    
+  </body>
+</html>

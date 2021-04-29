@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="p5.js"></script>
+    <script src="p5.dom.js"></script>
+
+    <script src="p5.sound.min.js"></script>
+    <!-- <script src="Person.js"></script> -->
+    <script src="Coordinate.js"></script>
+    <script src="Community2.js"></script>
+    <script src="Person3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="challenge2.css" />
+    <meta charset="utf-8" />
+  </head>
+  <body>
+
+    <div id="box3">
+      <div id="container">
+        <a href="https://covid-simulator-tcd.herokuapp.com"><div id="logo">
+          <img src="pictures/potentialLogo4.png" />
+        </div></a>
+        
+        <div id="menu" >
+          
+          <ul>
+            <a class="topLink" href="https://covid-simulator-tcd.herokuapp.com"><li >
+              Introduction
+            </li></a>
+            <a class="topLink" href="https://covid-simulator-tcd.herokuapp.com/challenge1.html"><li >
+              Challenge 1
+            </li></a>
+            <a class="topLink" href="https://covid-simulator-tcd.herokuapp.com/challenge2.html"><li>
+              Challenge 2
+            </li></a>
+            <a class="topLink" href="https://covid-simulator-tcd.herokuapp.com/challenge3.html"><li>
+              Challenge 3
+            </li></a>
+            <a class="topLink" href="https://covid-simulator-tcd.herokuapp.com/sandbox.html"><li>
+              SandBox
+            </li></a>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="box4"><h1><b><u>Challenge 2</u></b></h1>
+    </br> <p>For the second challenge we will add more complexity to the simulator. </p>
+  </br>
+  <img id="hospitalPic" src="pictures/hospitalSection.png">
+  <p>Firstly, this version of the simulator will include a hospital section like this one above. This will change the fatality rate from the previous challenge as it will now be broken down into the hospitalisation rate (the amount of infected people that have to visit the hospital) and the fatality rate which affects what percentage of people who visit the hospital will survive. A slider will also be introduced which controls the hospital capacity. It is important to keep an eye on this, because if the hospital becomes overrun, (i.e. there are more infected people in the hospital than the hospital's capacity) the fatality rate will automatically increase. The hospital will flash red if it is currently over capacity.</p>
+</br>
+
+<hr>
+</br>
+<p>In this sense it is important to "flatten the curve" and ensure that the hospital does not become overwhelmed by a sudden surge of cases. You can easily track how quickly the disease is spreading by following the live chart below the simulator which will show you what proportion of the population is currently susceptible, infected, immune or dead.</p>
+</br>
+
+<img id="graphPic" src="pictures/graph.png">
+</br>
+</br>
+
+<hr>
+</br>
+<p>Another significant new feature in this challenge is that the population will no longer move within one big area. The area will be broken up into 3 smaller 'communities' in which the people will be bound. However, depending on the travel restrictions, which you can control, the people will move in between the communities for school, work e.t.c. Below you can see a screenshot of the communities with the travel restrictions at their heighest. For this simulation, we will start with one infected person in each community.</p>
+
+<img id="communitiesPic" src="pictures/communities.png">
+</br>
+</br>
+<hr>
+</br>
+<p>The last two variables you must be aware of before attempting this challenge are <b><u>Compliance</u></b> and <b><u>Vaccinations per Day.</u></b> The compliance slider will dictate essentially how much the people within the simulation will do what they're told. If there is a low level of compliance, people might ignore the travel restrictions, or they may refuse to quarantine, thus increasing how rapidly the disease spreads. </p>
+</br>
+<p>Vaccinations per day will dictate how many people are vaccinated everyday. Once vaccinated the people will remain within the community but will not contract or transmit the virus. Vaccinated people will be referred to as 'Immune' will falls under the 'Removed' category in the aforementioned S.E.I.R. model, and will be displayed as purple. The simulations thus far have all assumed that having recovered from the virus, people are susceptible to catching it again. However this is often not the case, as with many viruses, the body builds up antibodies after recovering from the virus and becomes immune to catching it again. After you have completed this challenge, you can see how different things look when people are immune after recovery by heading to the sandbox area of the site and setting <b><u>"Immune after Recovery"</u></b> to Yes.</p>
+
+</br>
+<hr>
+</br>
+<h3><b><u>Your Challenge:</u></b></h3>
+</br>The disease variables have been set and locked at rates that will mimic Covid-19 and will almost always ensure a sudden "first wave". You cannot alter these variables. You can however, alter the government variables and your goal is to design a response to this virus. The Travel Restrictions, Hospital Capacity, and Vaccinations per day will all incur a daily cost depending on how much you use them. With each day that passes, your daily cost will be added to your accumulated cost as you build up your expenditure. If you want to increase compliance back to its original rate this will also incur a one time fee depending on how much you increase it by.</br>
+</br><p>Your challenge is to keep deaths under <b><u>10%</u></b>  of the population. You have been allocated a <b><u>€100,000,000</u></b> budget to try and suppress the virus and achieve this goal. Once your Accumulated Cost exceeds €100,000,000 the sliders will return to their original rates and you will no longer have any control, so it is important to use your budget frugally. By decreasing some costs below their initial value, you can reduce your daily costs however once money is spent you can not get it back. So for example, decreasing travel restricions below their initial 40% will subsidise the daily cost of vaccines, however if you have already spent the money on vaccines you can not recuperate it by having low travel restrictions or hospital capacity. </p>
+</br><p>Remember these simulations are built on probability and with probability comes luck, so don't be afraid to try the same strategy again and see if it attains different results. Move the government variables above and below their initial value to get a feel for how the cost functions work and when you are ready hit start to begin the simulation. Don't forget, once the simulation has begun you can still alter the variables in real-time in response to what is happening in the simulation. The simulation will run until the disease has died out or until 100 days have passed. </p>
+
+</div>
+
+    <div id="sketch-container">
+      
+    </div>
+
+
+    <div id="controls">
+      <div id="info">
+      <h2><b><u>Info</u></b></h2>  
+      <h3 id="healthy"></h3>
+
+      <h3 id="asymptomatic"></h3>
+      <h3 id="virus"></h3>
+      <h3 id="immune"></h3>
+
+      <h3 id="hospitalised"></h3>
+
+      <h3 id="dead"></h3>
+    </div>
+
+      <!-- <h3 id="total"></h3> -->
+  </br>
+</br>
+      <!-- <p id="timer">___________</p> -->
+    <div id="diseaseControls">
+      <h2><b><u>Disease Variables</u></b></h2> 
+      <!-- <h3 id="radio"> <span id="radioText"></span></h3> -->
+      <h3 id="probability">Probability of Infection: <span id="probabilityText"></span></h3>
+      <h3 id="hospitality">Hospitalisation Rate: <span id="hospitalisationText"></span></h3>
+      <h3 id="fatality">Fatality Rate: <span id="fatalityText"></span></h3>
+      <h3 id="period">Asymptomatic Period: <span id="asymptomaticText"></span></h3>
+    </div>  
+  </br>
+</br>
+    <div id="govControls">
+      <h2><b><u>Government Variables</u></b></h2> 
+      
+    
+
+      
+      <h3 id="travel"><span id="travelText">Travel Restrictions:</span>  </h3>
+      
+      <h3 id="capacity"><span id="capacityText">Hospital Capacity:</span></h3>
+
+      
+      <h3 id="vaccine">Vaccinations per Day: <span id="vaccineText"></span></h3>
+      <h3 id="compliance">Compliance: <span id="complianceText"></span></h3>
+      <h3 id="dailyCost">Daily Cost: €0</h3>
+      <h3 id="accumulatedCost">Accumulated Cost: €0</h3>
+
+      <span id="controlButtons"></span>
+
+      
+
+      <!-- <a href="screen3.html"> Previous Page</a>
+      <a href="screen4.html"> Next Page</a> -->
+
+    
+
+      <!-- <a class="nav__link nav__link--btn btn--show-modal" href="#"
+        >Display Results</a
+      > -->
+      </div>
+    </div>
+    
+
+    
+    <div
+    class="chart-container"
+    style="position: absolute; height: 13vw; width: 70vw; left: 2%"
+    
+    
+  >
+    <canvas id="myChart" ></canvas>
+  </div>
+
+
+
+    
+
+    <div class="overlay hidden"></div>
+
+    <div class="modal hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">
+        Challenge
+        <span class="highlight" id="success"></span>
+        <span class="highlightRed" id="failed"></span>
+
+      </h2>
+      <!-- <form class="modal__form"> -->
+        <p id="congrats"></p>
+      
+                
+        <h3 id="percentage"> </h3>
+        <h3 id="totalSpent"></h3>
+        <h3>Average Effective R Number: <span id="rNumber"></span></h3>
+      
+      <p id="rerun">Feel free to run the simulation again, experimenting with different variable values and taking note of the effects. When you are ready hit "Next Page" to head to the final challenge.</p>
+      
+    
+
+    <div
+    class="chart-container2"
+    style="position: relative; height: 15vw; width: 30vw; left:15%; bottom: 10%;"
+  >
+    <canvas id="myChart2"></canvas>
+
+    
+  </div>
+
+  <div class="buttonHolder" >
+    <button class="btn" id="reset">Run Again &#10227;</button>  
+    <!-- <a style="text-align: center;"href="http://127.0.0.1:8080/screen3.html" target="_parent"><button class="btn">Next Page &rarr;</button></a> -->
+    <a href="https://covid-simulator-tcd.herokuapp.com/challenge3.html"><button class="btn">Challenge 3 &rarr;</button></a>
+
+    
+    </div>
+
+    
+      
+
+      <!-- </form> -->
+    </div>
+    <script src="challenge2.js"></script>
+
+    <script src="chart.js"></script>
+
+
+  </body>
+</html>

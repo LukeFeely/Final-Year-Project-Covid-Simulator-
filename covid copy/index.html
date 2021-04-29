@@ -1,0 +1,104 @@
+<!-- SO LONG NERDS -->
+<html>
+  <head>
+    <script src="Person.js"></script>
+    <script src ="Coordinate.js"></script>
+    <script src="sketch.js"></script>
+    <script src="p5.js"></script>
+    <script src="p5.dom.js"></script>
+    <script src="landing.js"></script>
+
+    <script src="p5.sound.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="index.css" />
+
+  </head>
+  <body>
+    <div id="main">
+      <div id="box1"></div>
+      <div id="box2">
+        <div id="text">COVID<br />SIMULATOR</div>
+      </div>
+
+      <div id="box3">
+        <div id="container">
+          <a href="https://covid-simulator-tcd.herokuapp.com"><div id="logo">
+            <img src="pictures/potentialLogo4.png" />
+          </div></a>
+          
+          <div id="menu" >
+            
+            <ul>
+              <a class="topLink" href="https://covid-simulator-tcd.herokuapp.com"><li >
+                Introduction
+              </li></a>
+              <a class="topLink" href="https://covid-simulator-tcd.herokuapp.com/challenge1.html"><li >
+                Challenge 1
+              </li></a>
+              <a class="topLink" href="https://covid-simulator-tcd.herokuapp.com/challenge2.html"><li>
+                Challenge 2
+              </li></a>
+              <a class="topLink" href="https://covid-simulator-tcd.herokuapp.com/challenge3.html"><li>
+                Challenge 3
+              </li></a>
+              <a class="topLink" href="https://covid-simulator-tcd.herokuapp.com/sandbox.html"><li>
+                SandBox
+              </li></a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section" id="fade"></div>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#fade').hide().delay(5000).fadeIn('slow');
+      });
+    </script>
+    <div id="box4"><h2>Welcome to the Covid 19 Simulator</h2>
+    </br> <p>This is an interactive tool that enables users to run a variety of simulations which attempt to emulate how a disease such as Covid 19 can spread throughout a population. The user will be able to alter an array of variables in real time and witness the effects these changes have on how the disease spreads through the population, allowing them to develop their own concepts on how important certain factors can be during a pandemic. </p>
+
+  </br><p>If any of your family members or close friends have been seriously affected by Covid-19, you may prefer not to engage with this simulator. If this is the case and you are using this in class, please raise this issue with your teacher.</p>
+
+</br>
+<div id="sketch-container"></div>
+</br>
+<p><b>Important Disclaimer:</b> This is not an attempt to scientifically model Covid-19. It is a much simplified version of the viral disease process and does not attempt to accurately depict or predict the behaviour of Covid-19. The goal of this tool instead is to delineate some key concepts about how diseases such as Covid can spread and what we can do to prevent this spread. </p>
+</br>
+<p>The simulations on this site are based on the <b>S.E.I.R. Model</b>, a commonly used model in epidemiology, which essentially breaks the population up into four categories:</p>
+
+<!-- <div class="parent">
+<ul >
+  <li>Susceptible</li>
+  <li>Exposed</li>
+  <li>Infected</li>
+  <li>Removed</li>
+</div> -->
+</br>
+<img id="table" src="pictures/table.png" />
+</br>
+</br>
+<p>Using these metrics we will attempt to run some interesting simulations and set some challenges to allow you to experiment with altering certain elements of the disease and noting the effects, if any, that are caused. Click the button below to be introduced to the first challenge. </p>
+
+<p>If you have time, after having interacted with this simulator it would be greatly appreciated if you could fill out this quick survey to help evaluate this tool. Any and all feedback would be very valuable for the further development of this tool. Thank you!</p>
+<a href="https://scsstcd.qualtrics.com/jfe/form/SV_cFIMh04w7a2ZccB" class="topLink"> <u>Survey Link</u></a>
+
+</br>
+
+
+</br>
+</br>
+</br>
+<a href="https://covid-simulator-tcd.herokuapp.com/challenge1.html" class="btn">Challenge 1 &rarr;</a>
+</br>
+
+</div>
+
+
+</br>
+
+    
+  </body>
+</html>
